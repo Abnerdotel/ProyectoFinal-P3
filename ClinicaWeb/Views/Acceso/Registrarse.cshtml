@@ -1,0 +1,136 @@
+﻿@model ClinicaWeb.Models.DTOs.VMPaciente;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Registrarse - Clínica</title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <script src="~/lib/fontawesome/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-7">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header text-center">
+                                    <h3 class="font-weight-light my-4">Crear Cuenta</h3>
+                                </div>
+                                <div class="card-body">
+                                    @if (ViewBag.Creado == null)
+
+                                    {
+                                        <form asp-controller="Acceso" asp-action="Registrarse" method="post">
+                                            <!-- Documento -->
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" type="text" placeholder="Número de Documento" asp-for="DocumentoIdentidad" />
+                                                        <label for="DocumentoIdentidad">Nro. Documento</label>
+                                                    </div>
+                                                </div>
+                                                <!-- Nombres -->
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" type="text" placeholder="Nombres" asp-for="Nombre" />
+                                                        <label for="Nombre">Nombres</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Apellidos y Correo -->
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" type="text" placeholder="Apellidos" asp-for="Apellido" />
+                                                        <label for="Apellido">Apellidos</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" type="email" placeholder="Correo Electrónico" asp-for="Correo" />
+                                                        <label for="Correo">Correo</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Contraseña y Confirmación -->
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" type="password" placeholder="Crear contraseña" asp-for="Clave" />
+                                                        <label for="Clave">Contraseña</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" type="password" placeholder="Confirmar contraseña" asp-for="ConfirmarClave" />
+                                                        <label for="ConfirmarClave">Confirmar Contraseña</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Mensaje de error -->
+                                            @if (ViewBag.Mensaje != null)
+
+                                            {
+                                                <div class="alert alert-danger">
+                                                    @ViewBag.Mensaje
+                                                </div>
+                                            }
+
+                                            <!-- Botón de Registro -->
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Crear Cuenta</button></div>
+                                            </div>
+                                        </form>
+                                    }
+
+                                    else
+
+                                    {
+                                        <div class="alert alert-success">
+                                            <p>@ViewBag.Mensaje</p>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="card-footer text-center py-3">
+                                    <div class="small"><a asp-controller="Acceso" asp-action="Login">¿Ya tienes una cuenta? Accede aquí</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="layoutAuthentication_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Abner Dotel 2023-0183</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
