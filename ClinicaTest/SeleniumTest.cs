@@ -147,8 +147,8 @@ namespace ClinicaTest
             Prueba("Prueba de registro de datos en especialidad", "Registra una especialidad en la base de datos");
             _driver.Navigate().GoToUrl(_baseUrl);
 
-            _driver.FindElement(By.Id("DocumentoIdentidad")).SendKeys("40302001");
-            _driver.FindElement(By.Id("Clave")).SendKeys("1234");
+            _driver.FindElement(By.Id("DocumentoIdentidad")).SendKeys("40302010");
+            _driver.FindElement(By.Id("Clave")).SendKeys("123");
 
             var waitEspecialidad = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             var loginButton = waitEspecialidad.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[1]/div[1]/main/div/div/div/div/div[2]/form/div[3]/button")));
@@ -192,10 +192,10 @@ namespace ClinicaTest
             _driver.Navigate().GoToUrl(_baseUrl);
 
             var documentoIdentidad = waitDoctor.Until(ExpectedConditions.ElementIsVisible(By.Id("DocumentoIdentidad")));
-            documentoIdentidad.SendKeys("40302001");
+            documentoIdentidad.SendKeys("40302010");
 
             var clave = waitDoctor.Until(ExpectedConditions.ElementIsVisible(By.Id("Clave")));
-            clave.SendKeys("1234");
+            clave.SendKeys("123");
 
             var loginButton = waitDoctor.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[1]/div[1]/main/div/div/div/div/div[2]/form/div[3]/button")));
             loginButton.Click();
@@ -226,7 +226,7 @@ namespace ClinicaTest
 
             var especialidadSelect = waitDoctor.Until(ExpectedConditions.ElementToBeClickable(By.Id("select2-cboEspecialidad-container")));
             especialidadSelect.Click();
-            var especialidadOption = waitDoctor.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Psicolog?a']")));
+            var especialidadOption = waitDoctor.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Psicología']")));
             especialidadOption.Click();
 
             var guardarDoctorButton = waitDoctor.Until(ExpectedConditions.ElementIsVisible(By.Id("btnGuardar")));
@@ -262,10 +262,10 @@ namespace ClinicaTest
             _driver.Navigate().GoToUrl(_baseUrl);
 
             var documentoIdentidad = waitDoctor.Until(ExpectedConditions.ElementIsVisible(By.Id("DocumentoIdentidad")));
-            documentoIdentidad.SendKeys("40302001");
+            documentoIdentidad.SendKeys("40302010");
 
             var clave = waitDoctor.Until(ExpectedConditions.ElementIsVisible(By.Id("Clave")));
-            clave.SendKeys("1234");
+            clave.SendKeys("123");
 
             var loginButton = waitDoctor.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[1]/div[1]/main/div/div/div/div/div[2]/form/div[3]/button")));
             loginButton.Click();
