@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaData", "ClinicaData\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaEntidades", "ClinicaEntidades\ClinicaEntidades.csproj", "{E0CAC2BB-6A6D-447C-B962-71621F19716E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicaTest", "ClinicaTest\ClinicaTest.csproj", "{758641D0-3BEB-49D1-BEAA-DA476D7CB895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClinicaTest", "ClinicaTest\ClinicaTest.csproj", "{758641D0-3BEB-49D1-BEAA-DA476D7CB895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
